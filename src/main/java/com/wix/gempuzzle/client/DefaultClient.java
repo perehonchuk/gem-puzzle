@@ -1,8 +1,8 @@
 package com.wix.gempuzzle.client;
 
-import com.wix.gempuzzle.client.api.Board;
-import com.wix.gempuzzle.client.api.Move;
-import com.wix.gempuzzle.client.api.MoveResult;
+import com.wix.gempuzzle.api.Board;
+import com.wix.gempuzzle.api.Move;
+import com.wix.gempuzzle.api.MoveResult;
 import com.wix.gempuzzle.client.ui.UI;
 import com.wix.gempuzzle.game.Game;
 import lombok.AllArgsConstructor;

@@ -1,10 +1,10 @@
 package com.wix.gempuzzle.game;
 
 
-import com.wix.gempuzzle.client.api.Board;
-import com.wix.gempuzzle.client.api.GameStatus;
-import com.wix.gempuzzle.client.api.Move;
-import com.wix.gempuzzle.client.api.MoveResult;
+import com.wix.gempuzzle.api.Board;
+import com.wix.gempuzzle.api.GameStatus;
+import com.wix.gempuzzle.api.Move;
+import com.wix.gempuzzle.api.MoveResult;
 import com.wix.gempuzzle.game.domain.*;
 import com.wix.gempuzzle.game.exception.GameWasNotStartedException;
 import org.junit.Test;

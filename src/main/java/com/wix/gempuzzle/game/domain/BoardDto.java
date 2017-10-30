@@ -1,6 +1,6 @@
 package com.wix.gempuzzle.game.domain;
 
-import com.wix.gempuzzle.client.api.Board;
+import com.wix.gempuzzle.api.Board;
 import lombok.Value;
 
 import java.util.Arrays;

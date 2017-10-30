@@ -1,4 +1,4 @@
-package com.wix.gempuzzle.client.api;
+package com.wix.gempuzzle.api;
 
 public interface Tile {
     int getValue();

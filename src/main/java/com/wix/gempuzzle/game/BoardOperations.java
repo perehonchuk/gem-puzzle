@@ -1,6 +1,6 @@
 package com.wix.gempuzzle.game;
 
-import com.wix.gempuzzle.client.api.Move;
+import com.wix.gempuzzle.api.Move;
 import com.wix.gempuzzle.game.domain.BoardDto;
 
 public interface BoardOperations {

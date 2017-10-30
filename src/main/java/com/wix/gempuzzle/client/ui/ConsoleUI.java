@@ -1,6 +1,6 @@
 package com.wix.gempuzzle.client.ui;
 
-import com.wix.gempuzzle.client.api.Board;
+import com.wix.gempuzzle.api.Board;
 
 public class ConsoleUI implements UI {
     @Override

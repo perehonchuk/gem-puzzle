@@ -1,4 +1,4 @@
-package com.wix.gempuzzle.client.api;
+package com.wix.gempuzzle.api;
 
 public enum Move {
     LEFT(0, -1),
