@@ -1,13 +1,16 @@
 package com.wix.gempuzzle;
 
+import com.wix.gempuzzle.api.Move;
 import com.wix.gempuzzle.client.Client;
 import com.wix.gempuzzle.client.DefaultClient;
+import com.wix.gempuzzle.client.DefaultUserInput;
 import com.wix.gempuzzle.client.ui.UI;
 import com.wix.gempuzzle.game.domain.BoardDto;
 import com.wix.gempuzzle.game.*;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
@@ -18,7 +21,8 @@ import static org.mockito.Mockito.*;
 
 public class MediumTest {
     UI ui = mock(UI.class);
-    Supplier<String> userInput = mock(Supplier.class);
+    Supplier<String> consoleUserInput = mock(Supplier.class);
+    Supplier<Optional<Move>> userInput = new DefaultUserInput(consoleUserInput);
     Function<List<Integer>, List<Integer>> collectionsShuffler = mock(Function.class);
     BoardOperations boardOperations = new DefaultBoardOperations(collectionsShuffler);
     Game game = new DefaultGame(boardOperations);
@@ -27,7 +31,7 @@ public class MediumTest {
     @Test(timeout = 1000)
     public void shouldWonGame() throws Exception {
         when(collectionsShuffler.apply(anyList())).thenReturn(shuffle());
-        when(userInput.get()).thenReturn("s", "z", "d", "d");
+        when(consoleUserInput.get()).thenReturn("s", "z", "d", "d");
 
         client.playGame();
 

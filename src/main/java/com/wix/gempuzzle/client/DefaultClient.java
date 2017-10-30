@@ -12,14 +12,10 @@ import java.util.function.Supplier;
 
 @AllArgsConstructor
 public class DefaultClient implements Client {
-    public static final String LEFT_ACTION_STR = "a";
-    public static final String RIGHT_ACTION_STR = "d";
-    public static final String DOWN_ACTION_STR = "s";
-    public static final String UP_CONSTANT_STR = "w";
 
     private final UI ui;
     private final Game game;
-    private final Supplier<String> userInput;
+    private final Supplier<Optional<Move>> userInput;
 
     @Override
     public void playGame() {
@@ -27,7 +23,7 @@ public class DefaultClient implements Client {
         while (true) {
             ui.displayBoard(board);
             ui.displayInputMessage();
-            Optional<Move> move = getUserMove();
+            Optional<Move> move = userInput.get();
             if (!move.isPresent()) {
                 ui.displayUnknownMoveMessage();
                 continue;
@@ -44,22 +40,6 @@ public class DefaultClient implements Client {
                     board = moveResult.board;
                     break;
             }
-        }
-    }
-
-    private Optional<Move> getUserMove() {
-        String input = userInput.get();
-        switch (input) {
-            case LEFT_ACTION_STR:
-                return Optional.of(Move.LEFT);
-            case RIGHT_ACTION_STR:
-                return Optional.of(Move.RIGHT);
-            case DOWN_ACTION_STR:
-                return Optional.of(Move.DOWN);
-            case UP_CONSTANT_STR:
-                return Optional.of(Move.UP);
-            default:
-                return Optional.empty();
         }
     }
 }
